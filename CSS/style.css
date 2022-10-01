@@ -1,0 +1,172 @@
+:root {
+    --Gradient: hsl(335, 100%, 65%);
+    --PaleBlue: hsl(243, 100%, 93%);
+    --GrayishBlue: hsl(229, 7%, 55%);
+    --DarkBlue: hsl(228, 56%, 26%);
+    --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+/* hsl(6, 100%, 80%) to */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--VeryDarkBlue);
+    background-image: url("../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 100% 52%;
+    background-position: bottom;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 30px;
+}
+.container .One,
+.container .Two {
+    background-color: var(--DarkBlue);
+}
+.container .One {
+    padding: 40px 100px 40px 40px;
+    border-radius: 8px;
+    border-top-right-radius: 80px;
+}
+.container .One .fichier {
+    display: flex;
+}
+.container .One .logo {
+    margin-bottom: 27px;
+}
+.container .One .fichier img {
+    margin-right: 15px;
+    width: 50px;
+    height: 48px;
+    background-color: var(--VeryDarkBlue);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.container .Two {
+    position: relative;
+    padding: 40px;
+    height: 150px;
+    align-self: flex-end;
+    border-radius: 10px;
+}
+.container .Two > p {
+    color: var(--PaleBlue);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+.container .Two p span {
+    color: white;
+    font-weight: bold;
+}
+.container .Two .percentage {
+    position: relative;
+    margin: 0 auto;
+    width: 450px;
+    height: 20px;
+    background-color: var(--VeryDarkBlue);
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+.container .Two .percentage span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    width: 78%;
+    border-radius: 10px;
+    height: 14px;
+    background-image: linear-gradient(to right ,hsl(6, 100%, 80%), var(--Gradient));
+    color: var(--Gradient);
+    z-index: 1;
+}
+.container .Two .percentage span::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3px;
+}
+.container .Two div .text {
+    display: flex;
+    justify-content: space-between;
+}
+.container .Two div .text p {
+    color: white;
+    font-weight: bold;
+}
+.container .Two .price {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding: 15px 30px;
+    top: -50px;
+    right: 30px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    color: var(--GrayishBlue);
+    font-weight: bold;
+    font-size: 12px;
+}
+.container .Two .price span {
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.container .Two .price::before {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    border-style: solid;
+    border-color: white white transparent transparent;
+    border-width: 10px 10px 10px 10px;
+}
+@media (max-width: 767px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container .Two {
+        height: 170px;
+    }
+    .container .Two > p {
+        font-size: 13px;
+        text-align: center;
+    }
+    .container .Two .percentage {
+        width: 260px;
+    }
+    .container .Two .price {
+        top: initial;
+        bottom: -35px;
+        border-bottom-right-radius: 10px;
+        right: 80px;
+        font-size: 14px;
+    }
+    .container .Two .price::before {
+        display: none;
+    }
+    .container .Two .text {
+        margin-bottom: 50px;
+    }
+}
